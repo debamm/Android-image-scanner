@@ -1,15 +1,18 @@
 # Android-image-scanner
-(add your badges here)
 
-> *Your documentation is a direct reflection of your software, so hold it to the same standards.*
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Latest-green)](https://fastapi.tiangolo.com/)
+[![Android](https://img.shields.io/badge/Android-Studio-green)](https://developer.android.com/studio)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
 
 ## 🌟 Highlights
 
-- Object detection using Android app
-- This problem handled
-- etc.
-
+- Real-time object detection on Android devices
+- FastAPI backend with Docker containerization for easy deployment
+- End-to-end machine learning pipeline from training to production
+- Cloud-ready architecture with scalable inference service
+- Seamless Android client integration for cloud-based AI inference
 
 ## ℹ️ Overview
 This repo is created for me to learn how to develop a deployable model onto cloud service provider. The goal is to create an Android app which can do request to a server i host, where a service for inference using a simple AI is hosted. 
@@ -26,6 +29,67 @@ The project is splitted into 4 milestone :
 - Project Week 4 - Android Client + Documentation
 each milestone covers smaller tasks which documented in the project tab. 
 
+## Project Structure
+```
+android-image-scanner/
+├── feature/
+│   ├── main.py              # FastAPI application
+│   ├── models/              # ML model files
+│   ├── Dockerfile           # Docker configuration
+│   └── requirements.txt      # Python dependencies
+├── android-client/
+│   ├── app/
+│   ├── build.gradle         # Android build config
+│   └── src/                 # Android source code
+├── data/                    # Training data
+├── notebooks/               # Jupyter notebooks for experimentation
+└── README.md
+```
+
+##📦 Installation & Setup
+```
+# Clone repository
+git clone https://github.com/debamm/Android-image-scanner.git
+cd Android-image-scanner
+
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+##API Endpoints
+#Health Check
+HTTP
+https:LOCALHOST:<#port>/health
+
+#Image Detection
+HTTP
+<TODO>
+
+#POST /detect
+```
+{
+  "status": "success",
+  "detections": [
+    {
+      "class": "object_name",
+      "confidence": 0.95,
+      "bbox": [x, y, width, height]
+    }
+  ],
+  "processing_time": 0.234
+}
+```
+
+
+[Image file upload]
+
+Response:
+JSON
+
 
 ### ✍️ Authors
 Debamm - Deep Learning solution engineer
@@ -33,14 +97,19 @@ Debamm - Deep Learning solution engineer
 TODO:
 Create this two sections
 ## 🚀 Usage
-
-```py
->>> import mypackage
->>> mypackage.do_stuff()
-'Oh yeah!'
+#with docker
+first build the docker image
 ```
-
-
+docker build . -t <tag>
+```
+then you can run the container
+```
+docker run -p host:8000 <tag>
+```
+#using FastAPI:
+```
+fastapi run fasthello.py
+```
 ## ⬇️ Installation
 
 Simple, understandable installation instructions!
