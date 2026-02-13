@@ -46,7 +46,7 @@ android-image-scanner/
 └── README.md
 ```
 
-##📦 Installation & Setup
+## 📦 Installation & Setup
 ```
 # Clone repository
 git clone https://github.com/debamm/Android-image-scanner.git
@@ -60,16 +60,19 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-##API Endpoints
-#Health Check
-HTTP
-https:LOCALHOST:<#port>/health
+## API Endpoints
+list of API endpoints
+# Health Check
+```HTTP
+localhost:8080:<#port>/health
+```
 
-#Image Detection
-HTTP
+# Image Detection
+```HTTP
 <TODO>
+```
 
-#POST /detect
+# POST /detect
 ```
 {
   "status": "success",
@@ -84,30 +87,23 @@ HTTP
 }
 ```
 
-
-[Image file upload]
-
-Response:
-JSON
-
-
 ### ✍️ Authors
-Debamm - Deep Learning solution engineer
+Debamm - Deep Learning solution engineer, software developer in training 🤓
 
 TODO:
 Create this two sections
 ## 🚀 Usage
 #with docker
 first build the docker image
-```
+```bash
 docker build . -t <tag>
 ```
 then you can run the container
-```
-docker run -p host:8000 <tag>
+```bash
+docker run -p host:8080 <tag>
 ```
 #using FastAPI:
-```
+```bash
 fastapi run fasthello.py
 ```
 ## ⬇️ Installation
